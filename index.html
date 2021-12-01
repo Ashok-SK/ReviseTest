@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +39,7 @@
             isIOS = /iphone|ipod|ipad/.test(userAgent),
             isAndroid = /android/i.test(navigator.userAgent);
         // Check if this web page opening in native app's web view or browser
-        if ((isIOS && !safari) || isAndroid && userAgent.includes('wv')) {
+        if ((isIOS && !safari) || (isAndroid && userAgent.includes('wv'))) {
             isWebView = true;
         }
         return isWebView;
@@ -53,6 +52,6 @@
     } else {
         msg.innerHTML = "<h1>You are viewing in Browser </h1>"
     }
-    ua.textContent = userAgent;
+    ua.textContent = window.navigator.userAgent.toLowerCase();
 </script>
 </html>
