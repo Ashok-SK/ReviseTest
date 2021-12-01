@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Revise Test</h1>
+
+
+
 </body>
 </html>
+
+<script>
+
+    const isIOS = (['iPad Simulator','iPhone Simulator','iPod Simulator', 'iPad','iPhone', 'iPod'].indexOf(navigator.platform) !== -1);
+    
+    const isAndroid = /android/i.test(navigator.userAgent);
+    
+    const isMobile = isIOS || isAndroid;
+    console.log("isMobile",isMobile)
+    if(isMobile) {
+    console.log("Erorr",isMobile)
+    }
+    </script>
