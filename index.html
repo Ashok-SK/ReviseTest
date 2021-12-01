@@ -30,19 +30,36 @@
     </section>
 </body>
 <script>
-    // Detect if web page or applicaion opened through webview of ios/andriod or browser
+     // Detect if web page or applicaion opened through webview of ios/andriod or browser
+
     function isMobileWebView() {
+
         var isWebView = false;
+
         var userAgent = window.navigator.userAgent.toLowerCase();
+
         var safari = /safari/.test(userAgent),
+
             mobile = /Mobile/.test(userAgent),
-            isIOS =  /iPad|iPhone|iPod/.test(userAgent),
+
+            isMacLike = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform),
+
+            isIOS = /(iPhone|iPod|iPad)/i.test(navigator.platform),
+
             isAndroid = /android/i.test(navigator.userAgent);
+
+
+
         // Check if this web page opening in native app's web view or browser
-        if ((isIOS && !safari) || (isAndroid && userAgent.includes('wv'))) {
+
+        if ((isIOS && !safari) || (isMacLike && !safari) || (isAndroid && userAgent.includes('wv'))) {
+
             isWebView = true;
+
         }
+
         return isWebView;
+
     }
     // Show information on UI screen
     var msg = document.getElementById('view-msg');
