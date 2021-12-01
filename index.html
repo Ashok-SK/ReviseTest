@@ -36,7 +36,7 @@
         var userAgent = window.navigator.userAgent.toLowerCase();
         var safari = /safari/.test(userAgent),
             mobile = /Mobile/.test(userAgent),
-            isIOS = /iphone|ipod|ipad/.test(userAgent),
+            isIOS =  /iPad|iPhone|iPod/.test(userAgent),
             isAndroid = /android/i.test(navigator.userAgent);
         // Check if this web page opening in native app's web view or browser
         if ((isIOS && !safari) || (isAndroid && userAgent.includes('wv'))) {
